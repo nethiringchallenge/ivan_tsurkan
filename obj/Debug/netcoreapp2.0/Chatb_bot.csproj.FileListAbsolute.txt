@@ -1,0 +1,11 @@
+c:\Users\John\Desktop\Chatb_bot\bin\Debug\netcoreapp2.0\Chatb_bot.deps.json
+c:\Users\John\Desktop\Chatb_bot\bin\Debug\netcoreapp2.0\Chatb_bot.runtimeconfig.json
+c:\Users\John\Desktop\Chatb_bot\bin\Debug\netcoreapp2.0\Chatb_bot.runtimeconfig.dev.json
+c:\Users\John\Desktop\Chatb_bot\bin\Debug\netcoreapp2.0\Chatb_bot.dll
+c:\Users\John\Desktop\Chatb_bot\bin\Debug\netcoreapp2.0\Chatb_bot.pdb
+c:\Users\John\Desktop\Chatb_bot\obj\Debug\netcoreapp2.0\Chatb_bot.csprojResolveAssemblyReference.cache
+c:\Users\John\Desktop\Chatb_bot\obj\Debug\netcoreapp2.0\Chatb_bot.csproj.CoreCompileInputs.cache
+c:\Users\John\Desktop\Chatb_bot\obj\Debug\netcoreapp2.0\Chatb_bot.AssemblyInfoInputs.cache
+c:\Users\John\Desktop\Chatb_bot\obj\Debug\netcoreapp2.0\Chatb_bot.AssemblyInfo.cs
+c:\Users\John\Desktop\Chatb_bot\obj\Debug\netcoreapp2.0\Chatb_bot.dll
+c:\Users\John\Desktop\Chatb_bot\obj\Debug\netcoreapp2.0\Chatb_bot.pdb
