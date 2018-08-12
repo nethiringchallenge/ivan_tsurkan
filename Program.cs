@@ -13,7 +13,7 @@ namespace Chatb_bot
             var strategyName = GetParam(args, "-r");
             var fileName = GetParam(args, "-f");
 
-            IStrategy strategy = GetStrategy(strategyName);
+            IStrategy strategy = StrategyFactory.GetStrategy(strategyName);
             string[] answers = GetAnswers(fileName);
 
             new Chat(strategy, answers).Start();
@@ -29,11 +29,6 @@ namespace Chatb_bot
         {
             var lines = File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, fileName));
             return lines.Select(x => x.Replace(">", string.Empty).Trim()).ToArray();
-        }
-
-        public static IStrategy GetStrategy(string strategyName)
-        {
-            return StrategyFactory.GetStrategy(strategyName);
         }
     }
 }

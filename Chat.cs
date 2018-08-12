@@ -43,9 +43,9 @@ namespace Chatb_bot
         public void ChangeStrategy(string command)
         {
             var strategyName = command.Split(":")[1].Trim();
-            Strategy = Program.GetStrategy(strategyName);
+            Strategy = StrategyFactory.GetStrategy(strategyName);
 
-            Console.WriteLine("Как советовать так все чатлане. Использую стратегию: " + Strategy.ToString());
+            Console.WriteLine($"Как советовать так все чатлане. Использую стратегию: {Strategy.ToString()}");
         }
     }
 }
