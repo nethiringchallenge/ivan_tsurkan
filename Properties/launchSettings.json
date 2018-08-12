@@ -3,9 +3,6 @@
     "Chatb_bot": {
       "commandName": "Project",
       "commandLineArgs": "talk_to_me -r rand -f answers.txt ",
-      "environmentVariables": {
-        "args": "talk_to_me -r rand -f ../answers.txt "
-      }
     }
   }
 }
