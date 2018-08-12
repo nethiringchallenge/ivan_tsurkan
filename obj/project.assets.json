@@ -670,11 +670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\John\\Desktop\\Chatb_bot\\Chatb_bot.csproj",
+      "projectUniqueName": "c:\\Users\\John\\Desktop\\Chatb_bot\\Chatb_bot.csproj",
       "projectName": "Chatb_bot",
-      "projectPath": "C:\\Users\\John\\Desktop\\Chatb_bot\\Chatb_bot.csproj",
+      "projectPath": "c:\\Users\\John\\Desktop\\Chatb_bot\\Chatb_bot.csproj",
       "packagesPath": "C:\\Users\\John\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\John\\Desktop\\Chatb_bot\\obj\\",
+      "outputPath": "c:\\Users\\John\\Desktop\\Chatb_bot\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

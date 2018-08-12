@@ -1,65 +1,101 @@
 using System;
-using System.Collections.Generic;
 
-public interface IStrategy {
-    string GetAnswer(List<string> ansers); 
-}
-internal class RandomStrategy:IStrategy {
-    public string GetAnswer(List<string> ansers) {
-        var rnd = new Random().Next(0, ansers.Count); 
-        return ansers[rnd]; 
+namespace Chatb_bot.Strategy
+{
+    public interface IStrategy
+    {
+        string GetAnswer(string[] ansers);
+        string ToString();
     }
-}
 
-public interface ISequenceStrategy {
-    int Pointer {get; set; }
-}
-internal class UpSeqeuenceStrategy:IStrategy, ISequenceStrategy {
-public int Pointer {get; set; }
-    public UpSeqeuenceStrategy() {
-        Pointer = 0; 
+    public interface ISequenceStrategy
+    {
+        int Pointer { get; set; }
     }
-    public string GetAnswer(List<string> ansers) {
-       return ansers[Pointer++]; 
-       if (Pointer == ansers.Count) {
-           Pointer = 0; 
-       }
+
+    internal class RandomStrategy : IStrategy
+    {
+        public RandomStrategy()
+        {
+        }
+
+        public string GetAnswer(string[] ansers)
+        {
+            var rnd = new Random().Next(0, ansers.Length - 1);
+            return ansers[rnd];
+        }
+        public override string ToString()
+        {
+            return "rand";
+        }
     }
-}
-internal class DownSeqeuenceStrategy:IStrategy, ISequenceStrategy {
-public int Pointer {get; set; }
-    
-    public DownSeqeuenceStrategy() {
-        Pointer = 0; 
+
+    internal class UpSeqeuenceStrategy : IStrategy, ISequenceStrategy
+    {
+        public int Pointer { get; set; }
+        public UpSeqeuenceStrategy()
+        {
+            Pointer = 0;
+        }
+        public string GetAnswer(string[] ansers)
+        {
+            if (Pointer >= ansers.Length)
+            {
+                Pointer = 0;
+            }
+            return ansers[Pointer++];
+        }
+        public override string ToString()
+        {
+            return "upset";
+        }
     }
-    public string GetAnswer(List<string> ansers) {
-       return ansers[Pointer--]; 
-       if (Pointer == 0) {
-           Pointer = ansers.Count; 
-       }
+
+    internal class DownSeqeuenceStrategy : IStrategy, ISequenceStrategy
+    {
+        public int Pointer { get; set; }
+
+        public DownSeqeuenceStrategy()
+        {
+            Pointer = 0;
+        }
+        public string GetAnswer(string[] ansers)
+        {
+            if (Pointer == 0)
+            {
+                Pointer = ansers.Length - 1;
+            }
+            return ansers[Pointer--];
+        }
+        public override string ToString()
+        {
+            return "downseq";
+        }
     }
-}
-        public static class StrategyFactory {
-            internal static IStrategy GetStrategy(string strategyName) {
-               if (string.IsNullOrEmpty(strategyName)) {
-                   throw new ArgumentException("Wrond strategy name"); 
-               }
-               switch (strategyName) {
-                   case "rand": {
-                        return new RandomStrategy(); 
-                   }
-                   case "upseq":{
-                        return new UpSeqeuenceStrategy();
-                   }
-                   case "downseq":
-                   {
-                        return new DownSeqeuenceStrategy();
-                   }
-                   default:
+
+    public static class StrategyFactory
+    {
+        internal static IStrategy GetStrategy(string strategyName)
+        {
+            switch (strategyName)
+            {
+                case "rand":
                     {
-                    return new RandomStrategy();
+                        return new RandomStrategy();
                     }
-
-               }
+                case "upseq":
+                    {
+                        return new UpSeqeuenceStrategy();
+                    }
+                case "downseq":
+                    {
+                        return new DownSeqeuenceStrategy();
+                    }
+                default:
+                    {
+                        return new RandomStrategy();
+                    }
             }
         }
+    }
+}
